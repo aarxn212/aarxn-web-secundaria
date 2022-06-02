@@ -1,0 +1,47 @@
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+    <title>Contactos aaron</title>
+    <link rel = "icon" href = 
+    "https://cdn.discordapp.com/attachments/851889255437566012/947185487460860024/Sin_titulo_200_200_px-modified.png" 
+            type = "image/x-icon">
+   <link rel="stylesheet" href="style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <ul>
+       <li><a href="https://discord.gg/fFZBQBMG"><ion-icon name="logo-discord"></ion-icon></a></li>
+       <li><a href="https://github.com/aarxn0"><ion-icon name="logo-github"></ion-icon></a></li>
+       <li><a href="https://www.paypal.com/paypalme/aaron09xxx"><ion-icon name="logo-paypal"></ion-icon></a></li>
+       <li><a href="https://www.youtube.com/channel/UCV6b-uLPdm9eERZXSE8T2mQ"><ion-icon name="logo-youtube"></ion-icon></a></li>
+       <div id="marker"></div>
+    </ul>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+       let marker = document.querySelector('#marker');
+       let list = document.querySelectorAll('ul li');
+
+       function moveIndicator(e){
+           marker.style.left = e.offsetLeft+'px';
+           marker.style.width = e.offsetWidth+'px';
+       }
+
+       list.forEach(link => {
+           link.addEventListener('mousemove', (e) => {
+               moveIndicator(e.target);
+           })
+       })
+
+       function activeLink(){
+           list.forEach((item) =>
+           item.classList.remove(active));
+           this.classList.add('active');
+       }
+
+       list.forEach((item) =>
+       item.addEventListener('mouseover', activeLink));
+    </script>
+</body>
+</html>
